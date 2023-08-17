@@ -1,8 +1,8 @@
 package com.knd.duantotnghiep.phonetrackerlocation.di
 
-import com.knd.duantotnghiep.phonetrackerlocation.utils.Constraints
-import com.knd.duantotnghiep.phonetrackerlocation.remote.AuthInterceptor
-import dagger.Module
+ import com.knd.duantotnghiep.phonetrackerlocation.remote.AuthInterceptor
+ import com.knd.duantotnghiep.phonetrackerlocation.utils.Constants
+ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
@@ -18,7 +18,7 @@ class NetworkModule {
     @Singleton
     @Provides
     fun providesRetrofit(): Retrofit.Builder {
-        return Retrofit.Builder().baseUrl(Constraints.BASE_URL)
+        return Retrofit.Builder().baseUrl(Constants.BASE_URL)
             .addConverterFactory(GsonConverterFactory.create())
     }
 
